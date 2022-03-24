@@ -1,0 +1,14 @@
+<h1>Edit Blog Post</h1>
+
+<%= form_with model: @blog, url: "/blogs/#{@blog.id}", method: 'patch' do |edit| %>
+    <%= edit.label :title %>
+    <%= edit.text_field :title %>
+    <br>
+    <%= edit.label :content %>
+    <%= edit.text_field :content %>
+    <br>
+    <%= edit.submit 'Edit Blog Post' %>
+  <% end %>
+  <p><%= link_to 'Back to Home Page', blogs_path %></p>
+
+  

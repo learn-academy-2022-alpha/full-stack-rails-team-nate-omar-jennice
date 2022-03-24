@@ -6,15 +6,23 @@ As a developer, I have been commissioned to create an application where a user c
 
 As a developer, I can create a full-stack Rails application.
 
-Create a new Rails app in the appropriate folder: $ rails new blog -d postgresql -T
+Create a new Rails app in the appropriate folder: 
+
+$ rails new blog -d postgresql -T
 $ cd blog
 Create a database: $ rails db:create
+
 Add the dependencies for RSpec:
 $ bundle add rspec-rails
 $ rails generate rspec:install
+
 Generate the model with appropriate columns and data types
+$ rails generate model Blog title:string content:string
+
 $ rails db:migrate
 Generate the controller
+$ rails generate controller blog
+$ rails db:migrate
 
 Begin the rails server: $ rails server
 In a browser navigate to: http://localhost:3000
@@ -24,13 +32,8 @@ As a developer, my blog post can have a title and content.
 
 As a developer, I can add new blog posts directly to my database.
 
-$ rails generate model Blog title:string content:string
-$ rails db:migrate
-$ rails generate controller blog
-
 Generate migration for column data type change content string to content text
 $ rails db:migrate
-
 
 created new.html.erb
 
@@ -152,6 +155,9 @@ under blog_controller.rb
 
 Stretch Challenges
 As a user, I can delete my blog post.
+
+
+
 As a user, I can update my blog post.
 As a developer, I can ensure that all blog posts have titles and content for each post.
 As a developer, I can ensure that all blog post titles are unique.

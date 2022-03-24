@@ -3,7 +3,15 @@
 <ul>
 <% @blog.each do |blog| %>
     <li>
-     <%= link_to blog.title, blog_path(blog) %>
+    <div style="font-size: 25px">
+    <%= link_to blog.title, blog_path(blog) %>
+    </div>
+     </br>
+     <%= link_to "Edit", edit_path(blog) %>
+     <%= link_to "Delete", blog_path(blog), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %>
     </li> 
 <% end %>
 </ul>
